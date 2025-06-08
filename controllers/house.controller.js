@@ -64,7 +64,7 @@ class HouseController {
                             "target_date, " +
                             "users.id AS user_id, users.name AS user_name, " +
                             "plans.id AS plan_id, plans.name AS plan_name, " +
-                            "company_id, houses_statuses.construction_id AS construction_id, constructions.name AS construction_name ";
+                            "company_id, houses_statuses.construction_id AS construction_id, constructions.name AS construction_name, constructions.location AS construction_location ";
         const orderBy = " ORDER BY statuses.sort ASC, target_date ASC"
         const join = "JOIN types_of_work ON houses_statuses.type_of_work_id = types_of_work.id " +
                             "JOIN statuses ON houses_statuses.status_id = statuses.id " +
