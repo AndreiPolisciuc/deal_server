@@ -1,6 +1,6 @@
 const { Pool } = require("pg");
 
-const useSSL = process.env.USE_SSL === 'true';
+const notUseSsl = process.env.NOT_USE_SSL;
 
 const pool = new Pool({
     user: process.env.DB_USER || "deal_user",
@@ -8,6 +8,6 @@ const pool = new Pool({
     database: process.env.DB_NAME || "deal_db_j8xg",
     password: process.env.DB_PASSWORD || "5GzwhBiX1xkBr8fnDZ4ORyCCq8ja8o0i",
     port: Number(process.env.DB_PORT || 5432),
-    ssl: useSSL ? { require: true, rejectUnauthorized: false } : false,
+    ssl: notUseSsl ? false : { require: true, rejectUnauthorized: false },
 });
 module.exports = pool
