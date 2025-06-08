@@ -1,6 +1,6 @@
 const { Pool } = require("pg");
 
-const notUseSsl = process.env.NOT_USE_SSL;
+const notUseSsl = process.env.NOT_USE_SSL ==="true";
 
 const pool = new Pool({
     user: process.env.DB_USER || "deal_user",
