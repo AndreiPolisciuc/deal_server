@@ -54,7 +54,7 @@ class HouseController {
         if (status_id) condition += " AND status_id =" + status_id;
         if (user_id) condition += " AND user_id =" + user_id;
         if (construction_id) condition += " AND houses.construction_id =" + construction_id;
-        if (house_name) condition += " AND houses.name ILIKE '%" + house_name +"%'";
+        if (house_name) condition += " AND houses.name= " + house_name +"";
         if (target_date) condition += " AND (target_date >= '" + target_date+"' AND status_id != 5)";
 
         const select = "houses_statuses.id AS id, house_id, note, " +
